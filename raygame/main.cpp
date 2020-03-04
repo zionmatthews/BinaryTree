@@ -22,7 +22,7 @@ int main()
 
 	SetTargetFPS(60);
 
-	TreeNode node(7);
+	TreeNode node(7);	
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -39,6 +39,7 @@ int main()
 
 		ClearBackground(BLACK);
 
+		//tree.draw();
 	
 		node.draw(190, 200);
 
