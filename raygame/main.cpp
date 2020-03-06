@@ -39,7 +39,7 @@ int main()
 
 		ClearBackground(BLACK);
 
-		//tree.draw();
+		//tree.draw(node);
 	
 		node.draw(190, 200);
 
