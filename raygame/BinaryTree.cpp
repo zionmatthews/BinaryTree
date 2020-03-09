@@ -5,6 +5,7 @@
 BinaryTree::BinaryTree()
 {
 	//Set the root to null
+	m_pRoot = nullptr;
 }
 
 
@@ -79,9 +80,16 @@ void BinaryTree::remove(int a_Value)
 	current = m_pRoot;
 	TreeNode* parent;
 	parent = current;
-	//If the current node has a right branch
-	if (current->hasRight == true) {
 
+	TreeNode* Remove;
+	Remove = find(a_Value);
+	if (Remove == nullptr) {
+		return;
+	}
+
+	while (current != nullptr) 
+	{
+		//Find the minimum value in the  right branch by iterating
 	}
 }
 

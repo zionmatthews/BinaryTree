@@ -15,14 +15,19 @@ int main()
 {
 	// Initialization
 	//--------------------------------------------------------------------------------------
-	int screenWidth = 800;
-	int screenHeight = 450;
+	int screenWidth = 1000;
+	int screenHeight = 1000;
 
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
 	SetTargetFPS(60);
+	BinaryTree image;
+	TreeNode* selected;	
 
-	TreeNode node(7);	
+	image.insert(10);
+	image.insert(1);
+	image.insert(3);
+	image.insert(4);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -39,9 +44,7 @@ int main()
 
 		ClearBackground(BLACK);
 
-		//tree.draw(node);
-	
-		node.draw(190, 200);
+		image.draw(selected);
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------
