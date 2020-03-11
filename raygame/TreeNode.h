@@ -3,7 +3,7 @@ class TreeNode
 {
 public:
 	TreeNode(int value) { m_value = value; }
-	~TreeNode() {}
+	~TreeNode();
 
 	bool hasLeft() { return (m_left != nullptr); }
 	bool hasRight() { return (m_right != nullptr); }

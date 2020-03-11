@@ -1,5 +1,6 @@
 #pragma once
 #include "TreeNode.h"
+#include "raylib.h"
 class BinaryTree
 {
 public:

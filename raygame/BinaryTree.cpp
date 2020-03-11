@@ -23,10 +23,10 @@ bool BinaryTree::isEmpty() const
 }
 
 
-void BinaryTree::insert(int a_Value) 
+void BinaryTree::insert(int a_nValue) 
 {
 	//If the tree is empty, the value is inserted at the root
-	TreeNode*  NewNode = new TreeNode(a_Value);
+	TreeNode*  NewNode = new TreeNode(a_nValue);
 
 	if (isEmpty()) {
 		m_pRoot = NewNode;
@@ -39,31 +39,31 @@ void BinaryTree::insert(int a_Value)
 		TreeNode* parent;
 		parent = current;
 		//while the current node is not null
-		while (m_pRoot != nullptr)
+		while (current != nullptr)
 		{
 			//If the value to be inserted is less than the value on the current node
-			if (a_Value < current->getData) {
+			if (a_nValue < current->getData()) {
 				//Set the current node to the left child and continue
 				parent = current;
-				current = current->getLeft;
+				current = current->getLeft();
 			}
 
 			//If the value to be inserted is greater than the current node
-			if (a_Value > current->getData) {
+			else if (a_nValue > current->getData()) {
 				//Set the current node to the right child and continue
 				parent = current;
-				current = current->getRight;
+				current = current->getRight();
 			}
 
 			//If the value to be inserted is the same as the value in the current node
-			if (a_Value = m_pRoot->getData) {
+			else if (a_nValue == current->getData()) {
 				//Exit
-				break;
+				current = nullptr;
 			}
 		}//End of while
 
 		//Get the parent of the current node(before it was set to null)
-		if (a_Value < parent->getData()) {
+		if (a_nValue < parent->getData()) {
 			parent->setLeft(NewNode);
 		}
 		else {
@@ -73,7 +73,7 @@ void BinaryTree::insert(int a_Value)
 		
 }
 
-void BinaryTree::remove(int a_Value) 
+void BinaryTree::remove(int a_nValue) 
 {
 	//Find the value in the tree, obtaining a pointer to the node and its parent
 	TreeNode* current;
@@ -83,7 +83,7 @@ void BinaryTree::remove(int a_Value)
 
 	//Return if node is not found
 	TreeNode* Remove;
-	Remove = find(a_Value);
+	Remove = find(a_nValue);
 	if (Remove == nullptr) {
 		return;
 	}
@@ -111,16 +111,26 @@ void BinaryTree::remove(int a_Value)
 				parent->setRight(current->getRight());
 			}
 
-			else if (parent->getData() == a_Value) {
+			else if (parent->getData() == a_nValue) {
 				current->setLeft(m_pRoot);
 			}
 		}
 	}
 }
 
-TreeNode* BinaryTree::find(int a_Value) 
+TreeNode* BinaryTree::find(int a_nValue) 
 {
 	//Begin a search from the root node
+	//Find the value in the tree, obtaining a pointer to the node and its parent
+	TreeNode* current;
+	current = m_pRoot;
+	TreeNode* parent;
+	parent = nullptr;
+
+	if (findNode(a_nValue, &current, &parent)) {
+		return current;
+	}
+
 	return nullptr;
 }
 
@@ -132,7 +142,18 @@ void BinaryTree::draw(TreeNode* selected)
 
 bool BinaryTree::findNode(int a_nSearchValue, TreeNode** ppOutNode, TreeNode** ppOutParent) 
 {
+	//Set the current node to the root
 
+	//While the current nod eis not null
+	        //If the search value equals the current node value,
+	              //Return the current node and its parent
+	        //Otherwise
+	      //If the search value is less than the current node
+	                   //Set the current node to the left child
+	          //Otherwise
+	                    //Set the current node to the right child
+	//End while
+	//If the loop exists, then a match was not found, so return false
 	return false;
 }
 
