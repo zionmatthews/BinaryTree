@@ -81,6 +81,7 @@ void BinaryTree::remove(int a_Value)
 	TreeNode* parent;
 	parent = current;
 
+	//Return if node is not found
 	TreeNode* Remove;
 	Remove = find(a_Value);
 	if (Remove == nullptr) {
@@ -90,6 +91,30 @@ void BinaryTree::remove(int a_Value)
 	while (current != nullptr) 
 	{
 		//Find the minimum value in the  right branch by iterating
+		if (Remove->hasRight()) {
+			current = Remove->getRight();
+			parent = current;
+
+			while (current->hasLeft()) 
+			{
+				parent = current;
+				current = current->getLeft();
+			}
+			Remove = current;
+		}
+		else {
+			if (parent->getLeft() == Remove) {
+				parent->setLeft(current->getLeft());
+			}
+
+			else if (parent->getRight() == Remove) {
+				parent->setRight(current->getRight());
+			}
+
+			else if (parent->getData() == a_Value) {
+				current->setLeft(m_pRoot);
+			}
+		}
 	}
 }
 

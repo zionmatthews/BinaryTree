@@ -11,6 +11,7 @@
 
 #include "raylib.h"
 #include "TreeNode.h"
+#include "BinaryTree.h"
 int main()
 {
 	// Initialization
