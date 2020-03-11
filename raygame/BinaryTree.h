@@ -12,6 +12,7 @@ public:
 	void remove(int a_nValue);
 
 	TreeNode* find(int a_nValue);
+	TreeNode* removeParent;
 
 	void draw(TreeNode* selected = nullptr);
 

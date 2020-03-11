@@ -31,8 +31,8 @@ int main()
 	image.insert(90);
 	image.insert(56);	
 
-	selected = image.find(1);
-	image.remove(4);
+	selected = image.find(10);
+	image.remove(3);
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
