@@ -83,6 +83,20 @@ BinaryTree
       name: m_left / m_right
       description: the node's children
       type: variable
+      
+ **File**: Main.cpp
+ 
+ Description: The main of the program
+ 
+ **Attributes**
+ 
+         Name: image
+         Description: Used to insert the numbers to the node
+         Type: variable
+         
+         Name: selected
+         Description: used to to give main access to the tree node class and draw function
+         Type: variable
 
 ## License
 
