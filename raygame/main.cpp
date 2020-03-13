@@ -10,7 +10,6 @@
 ********************************************************************************************/
 
 #include "raylib.h"
-#include "TreeNode.h"
 #include "BinaryTree.h"
 int main()
 {
@@ -31,7 +30,7 @@ int main()
 	image.insert(90);
 	image.insert(56);	
 
-	selected = image.find(10);
+	selected = image.find(3);
 	image.remove(3);
 	//--------------------------------------------------------------------------------------
 

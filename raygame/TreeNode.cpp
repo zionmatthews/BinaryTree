@@ -19,3 +19,9 @@ void TreeNode::draw(int x, int y, bool selected)
 
 	DrawText(buffer, x - 12, y - 10, 20, WHITE);
 }
+
+TreeNode::~TreeNode()
+{
+
+}
+

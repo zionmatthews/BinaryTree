@@ -1,5 +1,6 @@
 #include "BinaryTree.h"
 #include "raylib.h"
+#include <stdio.h>
 
 
 BinaryTree::BinaryTree()
@@ -82,6 +83,8 @@ void BinaryTree::remove(int a_nValue)
 	parent = current;
 
 	TreeNode* RNode = nullptr;
+
+	findNode(a_nValue, &current, &parent);
 	//Return if node is not found
 	TreeNode* Remove;
 	Remove = find(a_nValue);
@@ -100,26 +103,30 @@ void BinaryTree::remove(int a_nValue)
 			RNode = RNode->getLeft();
 		}
 		current->setData(RNode->getData());
-
+		//If we are deleting the parent's left node
 		if (RNode == parent->getLeft()) {
 			parent->setLeft(parent->getRight());
 			delete RNode;
 		}
+		//If we are deleting the parents right node
 		if (RNode == parent->getRight()) {
 			parent->setRight(RNode->getLeft());
 			delete RNode;
 		}
 	}
+	//If the current has no right branch
 	else if (!current->hasRight()) {
+		//If we are deleting the parent's left child
 		if (current == parent->getLeft()) {
 			parent->setLeft(current->getLeft());
 			delete current;
 		}
+		//If we are deleting the parent's right child
 		if (current == parent->getRight()) {
 			parent->setRight(current->getLeft());
 			delete current;
 		}
-
+		//If we are deleting the root
 		if (RNode == m_pRoot) {
 			m_pRoot = current->getLeft();
 			remove(current->getData());
