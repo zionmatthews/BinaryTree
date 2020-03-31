@@ -47,7 +47,7 @@ int main()
 		BeginDrawing();
 
 		ClearBackground(BLACK);
-
+//Try not to copy my code word from word Tyrese :|
 		image.draw(selected);
 
 		EndDrawing();
